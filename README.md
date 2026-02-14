@@ -41,12 +41,6 @@ brew install starship
 Invoke-Expression (&starship init powershell)
 ```
 
-- Ubuntu
-```bash
-sudo snap install --edge starship
-echo 'export STARSHIP_CONFIG="$HOME/snap/starship/common/starship.toml"' >> ~/.zshrc
-```
-
 ### **3️⃣ Install a Nerd Font**
 To display icons properly, install a Nerd Font from [nerdfonts.com](https://nerdfonts.com), such as FiraCode Nerd Font, then set your terminal to use the newly installed font.
 
