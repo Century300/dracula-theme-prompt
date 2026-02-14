@@ -28,7 +28,7 @@ Follow the instructions to download and install the Dracula Theme for [Konsole (
 ### **2️⃣ Install [Starship](https://starship.rs/) cross-shell prompt**
 - Global:
 ```bash
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y && which starship
 ```
 
 - Homebrew (macOS):
@@ -36,7 +36,7 @@ curl -sS https://starship.rs/install.sh | sh
 brew install starship
 ```
 
-- Powershell (Windows)
+- PowerShell (Windows)
 ```bash
 Invoke-Expression (&starship init powershell)
 ```
@@ -66,12 +66,11 @@ brew install --cask font-fira-code-nerd-font
 mkdir -p ~/.config && curl -fsSL https://raw.githubusercontent.com/Century300/dracula-theme-prompt/main/starship.toml -o ~/.config/starship.toml
 ```
 
-- Occasionally, especially on macOS, Starship may fail to automatically add the required initialization line to `~/.zshrc`. If your prompt does not reflect the Starship theme, you may need to manually add the following line at the bottom of `~/.zshrc`:
+- Manually add the following line at the bottom of `~/.zshrc`:
 ```bash
 # starship theme https://starship.rs/
 eval "$(starship init zsh)"
 ```
-- If you install Starship via Snap in Ubuntu, move the config file to: $HOME/snap/starship/common/starship.toml.
 
 - To apply changes, restart your shell by 'exec zsh' or 'source ~/.zshrc' or both.
 
@@ -79,7 +78,7 @@ eval "$(starship init zsh)"
 
 ## Other notes
 - **📂 Folder Path Display (Truncation):**
-By default, this theme displays the full folder path unless it becomes too long.
+By default, this theme displays the full folder path unless it exceeds a certain length.
 If you prefer a shorter path, you can change truncation_length to 3 to only display the last 3 folders:
 ```toml
 # Stylish Directory
@@ -95,4 +94,4 @@ This setup is intended for Zsh. If you prefer Bash, simply replace .zshrc with .
 If you're not sure which shell you're using, run 'echo $SHELL' in your terminal.
 
 - **Colors:**
-Some colors from the Dracula palette are defined but not currently used — this is intentional, to make it easier for others to customize or extend this theme with consistent style.
+Some colors in the Dracula palette are defined but not currently used—this is intentional to make it easier for others to customize or extend this theme with consistent style.
